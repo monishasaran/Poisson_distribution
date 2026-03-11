@@ -29,10 +29,29 @@ The Poisson distribution is the discrete probability distribution of the number 
 ![image](https://user-images.githubusercontent.com/103921593/230282876-f4a5afbf-cac1-4648-a1b0-c78840638a8e.png)
 
 # Program :
+```
+import math
+n = int(input("Enter number of observations: "))
+data = []
+for i in range(n):
+    x = int(input("Enter number of arrivals: "))
+    data.append(x)
+lam = sum(data) / len(data)
+print("Mean (lambda) =", lam)
+def poisson(x, lam):
+    p = (lam**x * math.exp(-lam)) / math.factorial(x)
+    return p
+print("\nPoisson Probabilities:")
+for x in range(6):
+    p = poisson(x, lam)
+    print("P(X =", x, ") =", round(p,4))
+```
 
  
 
 # Output : 
+<img width="533" height="432" alt="image" src="https://github.com/user-attachments/assets/4bb4f1d2-8d29-48cf-a5d9-6a5420870ef1" />
+
 
 
 
